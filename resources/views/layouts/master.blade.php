@@ -128,13 +128,16 @@
         <!-- End Bread crumb -->
         <!-- Container fluid  -->
         <div class="container-fluid">
-            <!-- Start Page Content -->
-            @yield('content')
-            <!-- End PAge Content -->
+        @include('layouts.partial.alert')
+
+
+        <!-- Start Page Content -->
+        @yield('content')
+        <!-- End PAge Content -->
         </div>
         <!-- End Container fluid  -->
         <!-- footer -->
-        <footer class="footer"> © 2018 All rights reserved. Developed by <a href="https://www.pigeon-soft.com">Pigeon Soft</a></footer>
+        <footer class="footer"> © 2019 All rights reserved. Developed by <a href="https://www.pigeon-soft.com">Pigeon Soft</a></footer>
         <!-- End footer -->
     </div>
     <!-- End Page wrapper  -->
