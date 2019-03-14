@@ -50,7 +50,7 @@ When contributing code to Jabeda, you must follow the PSR coding standards. The 
 
 ## License
 
-Jabeda is released under the GPLv3 license
+Jabeda is released under the [GPLv3 license](https://github.com/prodhan/jabeda/blob/master/LICENSE.txt)
 
 Feel Free to use :) 
 
