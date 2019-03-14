@@ -14,11 +14,11 @@ The hosted software allows businesses to keep their data safe on the cloud, whic
 The cloud-based accounting software ensures that your business data is 100% secure and can only be accessed by authorized users.
 
 
-##Framework
+## Framework
 Jabeda uses [Laravel](https://laravel.com/docs/5.5#installing-laravel), the best existing PHP framework, as the foundation framework and [Modules](https://nwidart.com/laravel-modules) package for Apps.
 
 
-###Server Requirements
+### Server Requirements
 You will need to make sure your server meets the following requirements:
 
 * PHP >= 7.1.3
@@ -31,7 +31,7 @@ You will need to make sure your server meets the following requirements:
 * JSON PHP Extension
 * BCMath PHP Extension
 
-##Installation
+## Installation
 
 * Install Composer
 * Download the repository and unzip into your server
@@ -41,7 +41,7 @@ You will need to make sure your server meets the following requirements:
 * Change the .env file with your credentials 
 * Start using this application :)
 
-##Contributing
+## Contributing
 Fork the repository, make the code changes then submit a pull request.
 
 Please, be very clear on your commit messages and pull requests, empty pull request messages may be rejected without reason.
