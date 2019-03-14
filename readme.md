@@ -13,6 +13,7 @@ The hosted software allows businesses to keep their data safe on the cloud, whic
 
 The cloud-based accounting software ensures that your business data is 100% secure and can only be accessed by authorized users.
 
+![alt text](https://github.com/prodhan/jabeda/blob/master/Screenshot_1.png)
 
 ## Framework
 Jabeda uses [Laravel](https://laravel.com/docs/5.5#installing-laravel), the best existing PHP framework, as the foundation framework and [Modules](https://nwidart.com/laravel-modules) package for Apps.
