@@ -5,15 +5,16 @@
 @section('content')
 
     <div class="col-lg-12 col-lg-offset-1">
-        <h2><i class="fa fa-book"></i> Expense/Debit Items
-            <a href="{{ route('debits.create') }}" class="btn btn-success pull-right">Add Item</a></h2>
+        <h2><i class="fa fa-book"></i> Credit/Debit Items
+            <a href="{{ route('purposes.create') }}" class="btn btn-success pull-right">Add Item</a></h2>
         <hr>
         <div class="table-responsive">
             <table class="table table-bordered table-striped" id="class">
 
                 <thead>
                 <tr>
-                    <th>Name of Item/Fees</th>
+                    <th>Type</th>
+                    <th>Purpose</th>
                     <th>Operations</th>
                 </tr>
                 </thead>
@@ -22,13 +23,20 @@
                 @foreach ($data as $item)
                     <tr>
 
+                        <td>
+                            @if($item->type=='Cr')
+                                Credit
+                            @else
+                                Debit
+                            @endif
+                        </td>
                         <td>{{ $item->name }}</td>
 
 
                         <td>
-                            <a href="{{ route('debits.edit', $item->id) }}" class="btn-sm btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                            <a href="{{ route('purposes.edit', $item->id) }}" class="btn-sm btn-info pull-left" style="margin-right: 3px;">Edit</a>
 
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['debits.destroy', $item->id] ]) !!}
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['purposes.destroy', $item->id] ]) !!}
                             {!! Form::submit('Delete', ['class' => 'btn-sm btn-danger pull-left']) !!}
                             {!! Form::close() !!}
 

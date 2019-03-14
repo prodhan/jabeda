@@ -29,7 +29,7 @@
                     <tr>
 
                         <td>{{ $item->date }}</td>
-                        <td>{{ $item->name}}</td>
+                        <td>{{ $item->staff->name}}</td>
                         <td>{{ date("F", mktime(0,0,0, $item->month_name,1)) }}</td>
                         <td>{{ $item->amount }}</td>
                         <td>{{ $item->comment }}</td>

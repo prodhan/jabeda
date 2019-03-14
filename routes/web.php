@@ -21,19 +21,31 @@ Auth::routes();
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/', 'ProductsController@index')->name('home');
+//Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 //main features
 //staff
 Route::resource('staffs', 'StaffController');
-//staff salary
 
+//staff salary
 Route::resource('salary', 'SalaryController');
 Route::get('salaries/{type}', 'SalaryController@report');
-Route::get('salary-by-staff/{id}/{type}', 'SalaryController@salary_by_staff');
+Route::get('salary-by-staff/{id}', 'SalaryController@salary_by_staff');
 Route::get('salary/create/{id}', 'SalaryController@create');
+
+//Purpose
+Route::resource('purposes', 'PurposeController');
+//Debits
+Route::resource('debits', 'DebitController');
+//Credit
+Route::resource('credits', 'CreditController');
+//reports
+Route::get('reports', 'ReportController@index');
+Route::post('debit-report', 'ReportController@debit');
+Route::post('credit-report', 'ReportController@credit');
+Route::post('statement-report', 'ReportController@statement');
 
 
 //Settings

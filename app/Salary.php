@@ -16,7 +16,7 @@ class Salary extends Model
         'comment',
     ];
 
-    public function staff($type){
+    public function staff(){
 
         return $this->hasOne(Staff::class, 'id', 'staff_id');
     }

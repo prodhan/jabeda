@@ -6,27 +6,33 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="nav-devider"></li>
-                <li class="nav-label">Home</li>
-                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-primary pull-right">2</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Ecommerce </a></li>
-                        <li><a href="index1.html">Analytics </a></li>
-                    </ul>
+                <li class="nav-label"> Home</li>
+                <li> <a class="has-arrow  " href="/" aria-expanded="false"><i class="fa fa-heartbeat"></i><span class="hide-menu"> Dashboard </span></a>
+
                 </li>
                 <li class="nav-label">Apps</li>
-                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Menu 1</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{url('/')}}">Compose</a></li>
+                <li> <a href="{{url('/staffs')}}" aria-expanded="false"><i class="fa fa-users"></i><span> Staff</span></a></li>
+                <li> <a href="{{url('/credits/create')}}" aria-expanded="false"><i class="fa fa-hand-holding-usd"></i><span> Add Credit</span></a></li>
+                <li> <a href="{{url('/credits')}}" aria-expanded="false"><i class="fa fa-file-invoice-dollar"></i><span> Credit Voucher</span></a></li>
+                <li> <a href="{{url('/debits/create')}}" aria-expanded="false"><i class="fa fa-money-bill-alt"></i><span> Add Debit</span></a></li>
+                <li> <a href="{{url('/debits')}}" aria-expanded="false"><i class="fa fa-chart-bar"></i><span> Debit Voucher</span></a></li>
+                <li> <a href="{{url('/salary')}}" aria-expanded="false"><i class="fa fa-file-invoice"></i><span> Salary Sheet</span></a></li>
+                <li> <a href="{{url('/reports')}}" aria-expanded="false"><i class="fa fa-chart-line"></i><span> Reports</span></a></li>
 
-                    </ul>
-                </li>
 
+
+                <li class="nav-label">Upcoming</li>
+                <li> <a href="{{url('')}}" aria-expanded="false"><i class="fa fa-clipboard-list"></i><span> Attendance</span></a></li>
+                <li> <a href="{{url('')}}" aria-expanded="false"><i class="fa fa-clipboard-list"></i><span> Client Payment</span></a></li>
+                <li> <a href="{{url('')}}" aria-expanded="false"><i class="fa fa-clipboard-list"></i><span> Invoice</span></a></li>
+                <li> <a href="{{url('')}}" aria-expanded="false"><i class="fa fa-clipboard-list"></i><span> Gross/Loss</span></a></li>
 
 
                 <li class="nav-label">EXTRA</li>
 
 
                 @hasrole('Admin')
+                <li> <a href="{{url('/purposes')}}" aria-expanded="false"><i class="fa fa-database"></i><span> Purposes</span></a></li>
                 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Users</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{url('users')}}">Users</a></li>

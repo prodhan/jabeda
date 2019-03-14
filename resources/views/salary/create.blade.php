@@ -6,7 +6,7 @@
 
     <div class='col-lg-8 col-lg-offset-4'>
 
-        <h2><i class='fa fa-calculator'></i> Make Salary for {{$data->name}}
+        <h2><i class='fa fa-calculator'></i> Make Payment for {{$data->name}}
             <a href="{{ url()->previous() }}" class="btn btn-light pull-right">Back</a></h2>
         <hr>
 

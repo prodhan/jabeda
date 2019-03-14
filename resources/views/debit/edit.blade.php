@@ -11,7 +11,7 @@
             <a href="{{ url()->previous() }}" class="btn btn-light pull-right">Back</a></h2>
         <hr>
 
-        {!! Form::open(array('route'=> ['credits.update', $data->id],'method'=>'PUT', 'class'=>'form-horizontal')) !!}
+        {!! Form::open(array('route'=> ['debits.update', $data->id],'method'=>'PUT', 'class'=>'form-horizontal')) !!}
 
         <div class="row form-group">
             <div class="col-md-4">{{ Form::label('date', 'Date *') }}</div>

@@ -1,20 +1,22 @@
 @extends('layouts.master')
 
-@section('title', 'Expense/Debit Items')
+@section('title', 'Credits')
 
 @section('content')
 
     <div class="col-lg-12 col-lg-offset-1">
-        <h2><i class="fa fa-book"></i> Credit/Debit Items
-            <a href="{{ route('purposes.create') }}" class="btn btn-success pull-right">Add Item</a></h2>
+        <h2><i class="fa fa-book"></i> Credit Items of last 30 days
+            <a href="{{ route('credits.create') }}" class="btn btn-success pull-right">Add Credit</a></h2>
         <hr>
         <div class="table-responsive">
             <table class="table table-bordered table-striped" id="class">
 
                 <thead>
                 <tr>
-                    <th>Type</th>
+                    <th>Date</th>
                     <th>Purpose</th>
+                    <th>Description</th>
+                    <th>Amount</th>
                     <th>Operations</th>
                 </tr>
                 </thead>
@@ -23,20 +25,16 @@
                 @foreach ($data as $item)
                     <tr>
 
-                        <td>
-                            @if($item->type=='Cr')
-                                Credit
-                            @else
-                                Debit
-                            @endif
-                        </td>
-                        <td>{{ $item->name }}</td>
+                        <td>{{$item->date}}</td>
+                        <td>{{ $item->purpose->name }}</td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->amount }}</td>
 
 
                         <td>
-                            <a href="{{ route('purposes.edit', $item->id) }}" class="btn-sm btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                            <a href="{{ route('credits.edit', $item->id) }}" class="btn-sm btn-info pull-left" style="margin-right: 3px;">Edit</a>
 
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['purposes.destroy', $item->id] ]) !!}
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['credits.destroy', $item->id] ]) !!}
                             {!! Form::submit('Delete', ['class' => 'btn-sm btn-danger pull-left']) !!}
                             {!! Form::close() !!}
 

@@ -1,16 +1,16 @@
 @extends('layouts.master')
 
-@section('title', 'Add Credit Item')
+@section('title', 'Add Debit Item')
 
 @section('content')
 
     <div class='col-lg-8 col-lg-offset-4'>
 
-        <h2><i class='fa fa-calculator'></i> Add Credit Item
+        <h2><i class='fa fa-calculator'></i> Add Debit Item
             <a href="{{ url()->previous() }}" class="btn btn-light pull-right">Back</a></h2>
         <hr>
 
-        {!! Form::open(array('route'=> 'credits.store', 'class'=>'form-horizontal', 'files'=>true)) !!}
+        {!! Form::open(array('route'=> 'debits.store', 'class'=>'form-horizontal', 'files'=>true)) !!}
 
 
         <div class="row form-group">

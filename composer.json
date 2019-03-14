@@ -20,6 +20,9 @@
         "symfony/thanks": "^1.0"
     },
     "autoload": {
+        "files" : [
+            "app/CustomFunction/functions.php"
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"

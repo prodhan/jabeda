@@ -1,30 +1,56 @@
-<h3 align="center">User Authorization in Laravel 5.5 with Spatie Laravel-Permission</h3>
+<h3 align="center">Jabeda - An open source minimal accounting application</h3>
 
 
 
 ## About
 
-I have build an admin template with Laravel 5.5 and Spatie Laravel-Permissio.
+I have a small team for my works. SO that I think to make an application to manage their payments, cost, earnings etc.
+Jabeda is very simple accounting application to manage a small team as like mine. I have made this with Laravel 5.5
+
+The software provides well-maintained and easy-to-understand reports in order to help businesses to get the insights.
+
+The hosted software allows businesses to keep their data safe on the cloud, which eradicates the need for further investments into local storage.
+
+The cloud-based accounting software ensures that your business data is 100% secure and can only be accessed by authorized users.
 
 
+##Framework
+Jabeda uses [Laravel](https://laravel.com/docs/5.5#installing-laravel), the best existing PHP framework, as the foundation framework and [Modules](https://nwidart.com/laravel-modules) package for Apps.
 
 
-## Learning Laravel
+###Server Requirements
+You will need to make sure your server meets the following requirements:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+* PHP >= 7.1.3
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* Mbstring PHP Extension
+* Tokenizer PHP Extension
+* XML PHP Extension
+* Ctype PHP Extension
+* JSON PHP Extension
+* BCMath PHP Extension
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+##Installation
 
-## Learning laravel-permission
+* Install Composer
+* Download the repository and unzip into your server
+* Open and point your command line to the directory you unzipped Jabeda
+* Run the following command: composer install
+* Import database file into your database
+* Change the .env file with your credentials 
+* Start using this application :)
 
-This package allows you to manage user permissions and roles in a database.
+##Contributing
+Fork the repository, make the code changes then submit a pull request.
 
-[Learn More](https://github.com/spatie/laravel-permission)
+Please, be very clear on your commit messages and pull requests, empty pull request messages may be rejected without reason.
 
+When contributing code to Jabeda, you must follow the PSR coding standards. The golden rule is: Imitate the existing Jabeda code.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Jabeda is released under the GPLv3 license
 
 Feel Free to use :) 
 

@@ -8,7 +8,7 @@
 
     <div class="col-lg-12 col-lg-offset-1">
         <h2><i class="fa fa-calculator"></i> Salary Report of  {{$staff->name}}
-            <a href="{{url('salary/create', [$staff->id, 1])}}" class="btn btn-success pull-right">Make Payment</a></h2>
+            <a href="{{url('salary/create', [$staff->id])}}" class="btn btn-success pull-right">Make Payment</a></h2>
 
         </h2>
 

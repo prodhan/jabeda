@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Debit;
 use App\Salary;
 use App\Staff;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class SalaryController extends Controller
 {
@@ -13,9 +17,13 @@ class SalaryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $data=Salary::all();
+        $data=Salary::where('created_at', '>', Carbon::now()->subDays(90))->get();
         return view('salary.index', compact('data'));
     }
 
@@ -38,7 +46,46 @@ class SalaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $input['staff_id']=Input::get('staff_id');
+        $date=Input::get('date');
+        $input['month_name']=Input::get('month_name');
+        $amount=Input::get('amount');
+        $input['amount']=$amount;
+        $input['comment']=Input::get('comment');
+        $input['date']=$date;
+
+        $name=Input::get('name');
+
+        $month=date("F", mktime(0,0,0,  $input['month_name'], 1));
+
+        $expense['purpose_id']=1;
+        $expense['date']=$date;
+        $expense['amount']=$amount;
+        $expense['description']='Paid to '.$name.' For '.$month;
+        $expense['user_id']=Auth::user()->id;
+
+
+//        return $message;
+
+
+        try{
+            $data=Salary::create($input);
+            $ex=Debit::create($expense);
+            $bug=0;
+        }
+        catch (\Exception $e){
+            $bug=$e->errorInfo[1];
+        }
+
+        if($bug==0){
+                return redirect('/staffs')->with('success', $expense['description']);
+
+        }
+        else{
+            return redirect()->back()->with('error', 'Something Went Wrong!')->withInput();
+        }
     }
 
     /**
@@ -84,5 +131,12 @@ class SalaryController extends Controller
     public function destroy(Salary $salary)
     {
         //
+    }
+
+    public function salary_by_staff($id)
+    {
+        $staff=Staff::findOrFail($id);
+        $data=Salary::where('staff_id', '=', $id)->get();
+        return view('salary.bystaff', compact('staff','data'));
     }
 }
